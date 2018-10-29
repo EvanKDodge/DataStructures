@@ -1,5 +1,3 @@
-import java.util.Stack;
-
 class BracketMatch {
     public static void main(String[] args) {
         System.out.println(bracketMatch(""));
@@ -15,12 +13,12 @@ class BracketMatch {
     }
 
     public static boolean bracketMatch(String s) {
-        StackCustom sc = new StackCustom(); //
+        StackCustom sc = new StackCustom();
         char[] chars = s.toCharArray();
         if(chars.length != 0) {
             for(char c: chars) {
-                if(c == "}") {
-                    if(sc.peek() != "{") {
+                if(c == '}') {
+                    if(sc.peek() != '{') {
                         return false;
                     }
                     else {
@@ -28,8 +26,8 @@ class BracketMatch {
                     }
                 }
 
-                if(c == "]") {
-                    if(sc.peek() != "[") {
+                if(c == ']') {
+                    if(sc.peek() != '[') {
                         return false;
                     }
                     else {
@@ -37,8 +35,8 @@ class BracketMatch {
                     }
                 }
 
-                if(c == ")") {
-                    if(sc.peek() != "(") {
+                if(c == ')') {
+                    if(sc.peek() != '(') {
                         return false;
                     }
                     else {
@@ -46,7 +44,7 @@ class BracketMatch {
                     }
                 }
 
-                if(c == "{" || c == "[" || c == "(") {
+                if(c == '{' || c == '[' || c == '(') {
                     sc.push(c);
                 }
             }
@@ -61,4 +59,5 @@ class BracketMatch {
         else {
             return true;
         }
+    }
 }
