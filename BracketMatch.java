@@ -9,7 +9,7 @@ class BracketMatch {
         System.out.println(bracketMatch(")"));
         System.out.println(bracketMatch("{}"));
         System.out.println(bracketMatch("[]"));
-        System.out.println(bracketMatch("()"));
+        System.out.println(bracketMatch("public static boolean bracketMatch(String s) {this is phuqu'd [I like to bark]}"));
     }
 
     public static boolean bracketMatch(String s) {
@@ -18,7 +18,7 @@ class BracketMatch {
         if(chars.length != 0) {
             for(char c: chars) {
                 if(c == '}') {
-                    if(sc.peek() != '{') {
+                    if(sc.peek() == null || sc.peek() != '{') {
                         return false;
                     }
                     else {
@@ -27,7 +27,7 @@ class BracketMatch {
                 }
 
                 if(c == ']') {
-                    if(sc.peek() != '[') {
+                    if(sc.peek() == null || sc.peek() != '[') {
                         return false;
                     }
                     else {
@@ -36,7 +36,7 @@ class BracketMatch {
                 }
 
                 if(c == ')') {
-                    if(sc.peek() != '(') {
+                    if(sc.peek() == null || sc.peek() != '(') {
                         return false;
                     }
                     else {
